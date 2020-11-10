@@ -6,3 +6,8 @@ BASE DE DATOS:
 USUARIO ADMINISTRADOR (Dentro de la aplicación):
 	usuario: daniel@daniel.com
 	pass: daniel
+
+ERRORES CONOCIDOS:
+	El nombre de la clase Conexion no es apropiado.
+	Los nombres de las funciones estáticas de la clase Conexion no son apropiados.
+	Las últimas funciones de la clase Conexion no tienen control de errores.
