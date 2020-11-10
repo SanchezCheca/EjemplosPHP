@@ -70,23 +70,21 @@ class Conexion {
 
         self::nueva();
         $consulta = "SELECT * FROM usuarios WHERE correo=? AND pass=?";
-        $consulta = self::$conexion->prepare($consulta);
+        $stmt = self::$conexion->prepare($consulta);
+        $stmt->bind_param("ss", $val1, $val2);
+        $val1 = $correo;
+        $val2 = $pass;
+        $stmt->execute();
+        $result = $stmt->get_result();
         
-        $consulta->bind_param("ss", $correo, $pass);
-        $consulta->execute();
-        
-        
-        $consulta = "SELECT * FROM usuarios WHERE correo='" . $correo . "' AND pass='" . $pass . "';";
-        
-        $resultado = self::$conexion->query($consulta);
-        if ($fila = $resultado->fetch_assoc()) {
+        if ($fila = $result->fetch_assoc()) {
             $correo = $fila['correo'];
             $nombre = $fila['nombre'];
             $rol = $fila['rol'];
 
             $usuario = new Usuario($nombre, $correo, $rol);
         }
-        $resultado->free();
+        $result->free();
         self::cerrarBD();
         
         return $usuario;
