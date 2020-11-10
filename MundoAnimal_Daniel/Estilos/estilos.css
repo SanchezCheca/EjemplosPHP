@@ -1,0 +1,13 @@
+.sector
+{
+    width: 200px;
+    height: 100px;
+    display: inline-block;
+    background-color: lightgreen;
+    border: 2px black solid;
+    margin-top: 0;
+}
+.contenedor
+{
+    width: 100%;
+}

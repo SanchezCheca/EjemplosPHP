@@ -1,0 +1,8 @@
+BASE DE DATOS:
+	usuario: daniel
+	pass: Chubaca2020
+	!BD: registroPHP
+
+USUARIO ADMINISTRADOR (Dentro de la aplicación):
+	usuario: daniel@daniel.com
+	pass: daniel
